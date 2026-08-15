@@ -76,6 +76,20 @@ research question  →  evidence  →  useful system  →  human outcome
   </tr>
 </table>
 
+<details>
+<summary><strong>More sparks from the constellation</strong></summary>
+
+| Project | What it is |
+| --- | --- |
+| [IRISWA](https://soheil-aghayani.github.io/iriswa/) | Persian environmental publishing for waste-management knowledge, courses, and events |
+| [NCBI Explainer](https://soheil-aghayani.github.io/ncbi/) | A visual path from a biological question to the right research database |
+| [Laboratory Rules](https://soheil-aghayani.github.io/Laboratory-Rules/) | RTL safety, operating protocols, waste workflows, and emergency guidance |
+| [Food Recipe](https://soheil-aghayani.github.io/food-recipe/) | A playful browser desktop where recipes, music, files, and tiny apps coexist |
+| [Egg Timer](https://soheil-aghayani.github.io/egg-timer/) | A small, warm interface for choosing the egg you actually want |
+| [Ashfall Embers Trial](https://github.com/Soheil-Aghayani/dodge-game) | A PyQt5 survival arcade experiment about movement, pressure, and falling hazards |
+
+</details>
+
 ## The through-line
 
 ```mermaid
