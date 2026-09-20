@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/profile-banner.svg?v=084aa2e" alt="Soheil Aghayani. Research into systems, environmental engineering, software, and human curiosity." width="100%">
+  <img src="https://raw.githubusercontent.com/Soheil-Aghayani/Soheil-Aghayani/084aa2e/assets/profile-banner.svg" alt="Soheil Aghayani. Research into systems, environmental engineering, software, and human curiosity." width="100%">
 
   <p>
     <a href="https://soheil-aghayani.github.io/"><strong>ENTER THE PORTFOLIO</strong></a>
