@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./assets/profile-hero.webp" alt="An illustrated environmental systems landscape with a research notebook, laboratory glassware, data orbits, and a sunrise" width="100%">
+  <img src="./assets/profile-banner.svg" alt="Soheil Aghayani. Research into systems, environmental engineering, software, and human curiosity." width="100%">
 
   <h1>SOHEIL AGHAYANI</h1>
 

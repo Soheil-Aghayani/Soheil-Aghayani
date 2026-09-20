@@ -1,5 +1,5 @@
 <svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Soheil Aghayani — research, systems, curiosity</title>
+  <title id="title">Soheil Aghayani - research, systems, curiosity</title>
   <desc id="desc">An abstract landscape that connects environmental research with software systems.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
@@ -18,13 +18,49 @@
     <filter id="glow" x="-80" y="-80" width="360" height="360" filterUnits="userSpaceOnUse">
       <feGaussianBlur stdDeviation="22"/>
     </filter>
+    <style>
+      @keyframes rise-in {
+        from { transform: translateY(12px); }
+        to { transform: translateY(0); }
+      }
+      @keyframes scale-in {
+        from { transform: scale(0.88); }
+        to { transform: scale(1); }
+      }
+      @keyframes draw-line {
+        from { stroke-dasharray: 340; stroke-dashoffset: 340; }
+        to { stroke-dasharray: 340; stroke-dashoffset: 0; }
+      }
+      .motion-rise {
+        animation: rise-in 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .motion-rise-late {
+        animation: rise-in 850ms cubic-bezier(0.16, 1, 0.3, 1) 260ms both;
+      }
+      .motion-scale {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: scale-in 1050ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .motion-trace {
+        animation: draw-line 1450ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .motion-rise,
+        .motion-rise-late,
+        .motion-scale,
+        .motion-trace {
+          animation: none !important;
+        }
+      }
+    </style>
   </defs>
 
   <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
-  <circle cx="1020" cy="112" r="112" fill="#F8D58B" opacity="0.18" filter="url(#glow)"/>
-  <circle cx="1020" cy="112" r="76" fill="url(#sun)" opacity="0.92"/>
+  <circle cx="1020" cy="112" r="112" fill="#F8D58B" opacity="0.18" filter="url(#glow)" class="motion-scale"/>
+  <circle cx="1020" cy="112" r="76" fill="url(#sun)" opacity="0.92" class="motion-scale"/>
 
-  <g opacity="0.22" stroke="#C4EEF0" stroke-width="1">
+  <g opacity="0.22" stroke="#C4EEF0" stroke-width="1" class="motion-rise">
     <path d="M48 68H530"/>
     <path d="M48 102H430"/>
     <path d="M48 136H340"/>
@@ -35,18 +71,18 @@
     <path d="M880 52V214"/>
   </g>
 
-  <path d="M0 260C124 210 202 224 318 262C430 298 522 216 643 242C772 269 842 222 950 244C1047 264 1108 220 1200 204V360H0V260Z" fill="url(#ridge)"/>
-  <path d="M0 298C124 267 230 279 337 311C461 348 545 273 655 292C785 315 862 276 972 291C1070 305 1128 279 1200 267V360H0V298Z" fill="#061B21" opacity="0.8"/>
+  <path d="M0 260C124 210 202 224 318 262C430 298 522 216 643 242C772 269 842 222 950 244C1047 264 1108 220 1200 204V360H0V260Z" fill="url(#ridge)" class="motion-rise"/>
+  <path d="M0 298C124 267 230 279 337 311C461 348 545 273 655 292C785 315 862 276 972 291C1070 305 1128 279 1200 267V360H0V298Z" fill="#061B21" opacity="0.8" class="motion-rise-late"/>
 
-  <g stroke="#9CD8D1" stroke-width="3" stroke-linecap="round" opacity="0.85">
+  <g stroke="#9CD8D1" stroke-width="3" stroke-linecap="round" opacity="0.85" class="motion-rise-late">
     <path d="M90 292C102 262 115 243 138 219"/>
     <path d="M110 267C94 258 86 246 82 231"/>
     <path d="M118 254C139 248 151 237 158 221"/>
     <path d="M132 235C123 219 123 206 128 193"/>
   </g>
-  <path d="M137 219C109 211 94 195 93 173C118 178 137 192 145 211C151 193 164 182 183 177C181 199 165 216 145 224Z" fill="#9CD8D1" opacity="0.82"/>
+  <path d="M137 219C109 211 94 195 93 173C118 178 137 192 145 211C151 193 164 182 183 177C181 199 165 216 145 224Z" fill="#9CD8D1" opacity="0.82" class="motion-rise-late"/>
 
-  <g fill="#F8D58B">
+  <g fill="#F8D58B" class="motion-rise">
     <circle cx="650" cy="86" r="4"/>
     <circle cx="680" cy="118" r="3"/>
     <circle cx="708" cy="76" r="2"/>
@@ -54,16 +90,16 @@
     <circle cx="786" cy="92" r="2"/>
   </g>
 
-  <g fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif">
+  <g fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" class="motion-rise-late">
     <text x="70" y="92" font-size="18" letter-spacing="5" fill="#B8E3DD">SOHEIL AGHAYANI</text>
     <text x="70" y="148" font-size="42" font-weight="700" letter-spacing="1">RESEARCH</text>
     <text x="70" y="193" font-size="42" font-weight="700" letter-spacing="1">INTO SYSTEMS</text>
     <text x="70" y="232" font-size="16" letter-spacing="2" fill="#F8D58B">ENVIRONMENT · SOFTWARE · HUMAN CURIOSITY</text>
   </g>
 
-  <g transform="translate(862 246)" fill="none" stroke="#F5F1E9" stroke-width="2" opacity="0.78">
+  <g transform="translate(862 246)" fill="none" stroke="#F5F1E9" stroke-width="2" opacity="0.78" class="motion-rise-late">
     <rect width="248" height="62" rx="14"/>
-    <path d="M25 39C54 22 75 29 97 21C122 12 146 20 169 11C190 3 211 12 225 7" stroke="#F8D58B"/>
+    <path d="M25 39C54 22 75 29 97 21C122 12 146 20 169 11C190 3 211 12 225 7" stroke="#F8D58B" class="motion-trace"/>
     <circle cx="25" cy="39" r="4" fill="#F8D58B" stroke="none"/>
     <circle cx="225" cy="7" r="4" fill="#9CD8D1" stroke="none"/>
     <text x="25" y="52" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2" fill="#B8E3DD" stroke="none">IDEAS → TOOLS</text>
