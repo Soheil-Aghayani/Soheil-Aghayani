@@ -1,31 +1,51 @@
-<svg width="1200" height="560" viewBox="0 0 1200 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">Soheil Aghayani - research, systems, curiosity</title>
-  <desc id="desc">An abstract landscape that connects environmental research with software systems, featuring a sprouting plant on the lower right.</desc>
+<svg width="1200" height="2350" viewBox="0 0 1200 2350" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Soheil Aghayani — research, systems, and curiosity</title>
+  <desc id="desc">A single animated profile artwork presenting Soheil Aghayani's environmental research, software work, projects, and contact links.</desc>
+
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#092A31"/>
+    <linearGradient id="surface" x1="50" y1="0" x2="1150" y2="2350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071B22"/>
+      <stop offset="0.46" stop-color="#0B2830"/>
+      <stop offset="1" stop-color="#06161C"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1200" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#062329"/>
       <stop offset="0.58" stop-color="#124A51"/>
-      <stop offset="1" stop-color="#D9784A"/>
+      <stop offset="1" stop-color="#A95F48"/>
     </linearGradient>
-    <linearGradient id="sun" x1="910" y1="38" x2="1100" y2="220" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F8D58B"/>
-      <stop offset="1" stop-color="#E5A24B"/>
+    <linearGradient id="sun" x1="916" y1="44" x2="1080" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE09B"/>
+      <stop offset="1" stop-color="#E6A44D"/>
     </linearGradient>
-    <linearGradient id="ridge" x1="0" y1="230" x2="1200" y2="330" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#082329"/>
-      <stop offset="1" stop-color="#0F3940"/>
+    <linearGradient id="accent" x1="70" y1="0" x2="1130" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4BE65"/>
+      <stop offset="0.5" stop-color="#7BD8CD"/>
+      <stop offset="1" stop-color="#F4BE65"/>
     </linearGradient>
-    <filter id="glow" x="-80" y="-80" width="360" height="360" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="22"/>
+    <filter id="shadow" x="-40" y="-40" width="1280" height="2440" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
+    <filter id="glow" x="-100" y="-100" width="400" height="400" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="25"/>
+    </filter>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#B8E3DD" stroke-opacity="0.07"/>
+    </pattern>
+    <clipPath id="hero-clip">
+      <rect x="0" y="0" width="1200" height="500" rx="32"/>
+    </clipPath>
     <style>
       @keyframes rise-in {
-        from { transform: translateY(12px); }
-        to { transform: translateY(0); }
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
       @keyframes scale-in {
-        from { transform: scale(0.88); }
-        to { transform: scale(1); }
+        from { opacity: 0; transform: scale(0.86); }
+        to { opacity: 1; transform: scale(1); }
       }
       @keyframes orbit-forward {
         from { transform: rotate(0deg); }
@@ -35,118 +55,305 @@
         from { transform: rotate(360deg); }
         to { transform: rotate(0deg); }
       }
-      .motion-rise {
-        animation: rise-in 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      @keyframes signal {
+        0%, 100% { opacity: 0.35; }
+        50% { opacity: 1; }
       }
-      .motion-rise-late {
-        animation: rise-in 850ms cubic-bezier(0.16, 1, 0.3, 1) 260ms both;
+      .rise {
+        animation: rise-in 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
       }
-      .motion-scale {
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: scale-in 1050ms cubic-bezier(0.16, 1, 0.3, 1) both;
-      }
-      .orbit-motion,
-      .orbit-motion-reverse {
+      .rise-1 { animation-delay: 100ms; }
+      .rise-2 { animation-delay: 180ms; }
+      .rise-3 { animation-delay: 260ms; }
+      .rise-4 { animation-delay: 340ms; }
+      .fade { animation: fade-in 1100ms ease-out both; }
+      .scale { transform-box: fill-box; transform-origin: center; animation: scale-in 1000ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .orbit,
+      .orbit-reverse {
         transform-box: view-box;
-        transform-origin: 1020px 112px;
+        transform-origin: 1000px 126px;
       }
-      .orbit-motion {
-        animation: orbit-forward 18s linear infinite;
-      }
-      .orbit-motion-reverse {
-        animation: orbit-reverse 27s linear infinite;
-      }
+      .orbit { animation: orbit-forward 20s linear infinite; }
+      .orbit-reverse { animation: orbit-reverse 30s linear infinite; }
+      .signal { animation: signal 2.6s ease-in-out infinite; }
+      .link text { transition: fill 180ms ease; }
+      .link:hover text { fill: #FFE09B; }
       @media (prefers-reduced-motion: reduce) {
-        .motion-rise,
-        .motion-rise-late,
-        .motion-scale,
-        .orbit-motion,
-        .orbit-motion-reverse {
+        .rise, .fade, .scale, .orbit, .orbit-reverse, .signal {
           animation: none !important;
         }
       }
     </style>
   </defs>
 
-  <rect width="1200" height="560" rx="28" fill="url(#bg)"/>
-  <circle cx="1020" cy="112" r="112" fill="#F8D58B" opacity="0.18" filter="url(#glow)" class="motion-scale"/>
-  <g fill="none" stroke-width="1.5" class="motion-rise">
-    <circle cx="1020" cy="112" r="138" stroke="#F8D58B" opacity="0.28"/>
-    <circle cx="1020" cy="112" r="176" stroke="#B8E3DD" opacity="0.2"/>
-  </g>
-  <circle cx="1020" cy="112" r="76" fill="url(#sun)" opacity="0.92" class="motion-scale"/>
-  <g class="orbit-motion">
-    <circle cx="1158" cy="112" r="5" fill="#9CD8D1"/>
-  </g>
-  <g class="orbit-motion-reverse">
-    <circle cx="1196" cy="112" r="4" fill="#F8D58B"/>
+  <rect x="0" y="0" width="1200" height="2350" rx="32" fill="url(#surface)" filter="url(#shadow)"/>
+  <rect x="0" y="0" width="1200" height="2350" rx="32" fill="url(#grid)"/>
+
+  <!-- HERO / FIELD NOTE -->
+  <g clip-path="url(#hero-clip)">
+    <rect width="1200" height="500" fill="url(#hero)"/>
+    <rect width="1200" height="500" fill="url(#grid)" opacity="0.8"/>
+
+    <circle cx="1000" cy="126" r="130" fill="#F8D58B" opacity="0.14" filter="url(#glow)" class="scale"/>
+    <g fill="none" stroke-width="1.5" class="fade">
+      <circle cx="1000" cy="126" r="132" stroke="#F8D58B" stroke-opacity="0.28"/>
+      <circle cx="1000" cy="126" r="168" stroke="#B8E3DD" stroke-opacity="0.22"/>
+      <circle cx="1000" cy="126" r="205" stroke="#F8D58B" stroke-opacity="0.14"/>
+    </g>
+    <circle cx="1000" cy="126" r="76" fill="url(#sun)" opacity="0.94" class="scale"/>
+    <g class="orbit">
+      <circle cx="1132" cy="126" r="5" fill="#9CD8D1"/>
+    </g>
+    <g class="orbit-reverse">
+      <circle cx="1204" cy="126" r="4" fill="#F8D58B"/>
+    </g>
+
+    <g fill="#F8D58B" class="rise rise-1">
+      <circle cx="644" cy="80" r="4"/>
+      <circle cx="676" cy="113" r="3"/>
+      <circle cx="710" cy="72" r="2"/>
+      <circle cx="748" cy="143" r="4"/>
+      <circle cx="786" cy="92" r="2"/>
+      <circle cx="824" cy="128" r="3"/>
+    </g>
+
+    <g opacity="0.2" stroke="#C4EEF0" stroke-width="1" class="fade">
+      <path d="M70 94H520"/>
+      <path d="M70 130H460"/>
+      <path d="M70 166H380"/>
+      <path d="M680 44V222"/>
+      <path d="M720 44V222"/>
+      <path d="M760 44V222"/>
+      <path d="M800 44V222"/>
+      <path d="M840 44V222"/>
+    </g>
+
+    <path d="M0 336C122 286 222 294 332 330C452 370 544 289 664 315C790 342 862 294 968 315C1062 334 1128 291 1200 276V500H0V336Z" fill="#0A3037" class="rise rise-2"/>
+    <path d="M0 384C130 350 226 360 342 395C463 432 552 350 670 370C794 391 878 350 980 365C1070 378 1134 354 1200 338V500H0V384Z" fill="#061B21" opacity="0.86" class="rise rise-3"/>
+
+    <g opacity="0.86" fill="#9CD8D1" class="rise rise-4">
+      <path d="M1154 500Q1148 412 1119 265" fill="none" stroke="#9CD8D1" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M1145 410Q1174 365 1188 302" fill="none" stroke="#9CD8D1" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M1148 456Q1128 449 1126 460Q1137 471 1148 456Z"/>
+      <path d="M1139 404Q1117 398 1116 409Q1129 420 1139 404Z"/>
+      <path d="M1130 349Q1108 343 1108 354Q1120 365 1130 349Z"/>
+      <path d="M1140 431Q1160 418 1167 430Q1154 442 1140 431Z"/>
+      <path d="M1130 380Q1150 366 1158 378Q1147 391 1130 380Z"/>
+      <path d="M1161 375Q1183 362 1190 374Q1177 388 1161 375Z"/>
+      <path d="M1176 322Q1194 310 1200 321Q1188 334 1176 322Z"/>
+      <path d="M1119 265Q1108 246 1115 240Q1128 253 1119 265Z"/>
+    </g>
+
+    <g class="rise rise-1">
+      <rect x="70" y="40" width="260" height="50" rx="16" fill="#071B22" fill-opacity="0.38" stroke="#F8D58B" stroke-opacity="0.7" stroke-width="1.5"/>
+      <text x="98" y="71" fill="#F8D58B" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="3">IDEAS → TOOLS</text>
+    </g>
+
+    <g fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" class="rise rise-2">
+      <text x="70" y="127" font-size="17" letter-spacing="5" fill="#B8E3DD">SOHEIL AGHAYANI / FIELD NOTE 01</text>
+      <text x="70" y="191" font-size="48" font-weight="700" letter-spacing="1">RESEARCH</text>
+      <text x="70" y="244" font-size="48" font-weight="700" letter-spacing="1">INTO SYSTEMS</text>
+      <text x="70" y="284" font-size="15" letter-spacing="2" fill="#F8D58B">ENVIRONMENT · SOFTWARE · HUMAN CURIOSITY</text>
+    </g>
+
+    <g class="rise rise-4">
+      <g transform="translate(818 228)">
+        <rect width="250" height="62" rx="15" fill="#071B22" fill-opacity="0.22" stroke="#F5F1E9" stroke-opacity="0.55" stroke-width="1.5"/>
+        <text x="125" y="36" text-anchor="middle" dominant-baseline="middle" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2">QUESTION → EVIDENCE</text>
+      </g>
+    </g>
   </g>
 
-  <g opacity="0.22" stroke="#C4EEF0" stroke-width="1" class="motion-rise">
-    <path d="M48 68H530"/>
-    <path d="M48 102H430"/>
-    <path d="M48 136H340"/>
-    <path d="M720 52V214"/>
-    <path d="M760 52V214"/>
-    <path d="M800 52V214"/>
-    <path d="M840 52V214"/>
-    <path d="M880 52V214"/>
+  <!-- IDENTITY AND NAVIGATION -->
+  <g class="rise rise-3">
+    <text x="600" y="564" text-anchor="middle" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="1">SOHEIL AGHAYANI</text>
+    <text x="600" y="605" text-anchor="middle" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Environmental Engineer · Sustainability Researcher · Software Builder</text>
+    <text x="600" y="638" text-anchor="middle" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="16">Research that becomes a system. Systems that feel human.</text>
   </g>
 
-  <path d="M0 260C124 210 202 224 318 262C430 298 522 216 643 242C772 269 842 222 950 244C1047 264 1108 220 1200 204V360H0V260Z" fill="url(#ridge)" class="motion-rise"/>
-  <path d="M0 298C124 267 230 279 337 311C461 348 545 273 655 292C785 315 862 276 972 291C1070 305 1128 279 1200 267V360H0V298Z" fill="#061B21" opacity="0.8" class="motion-rise-late"/>
-
-  <!-- Plant sprouting from the bottom right ground -->
-  <g opacity="0.85" class="motion-rise-late" fill="#9CD8D1">
-    <!-- Main stem -->
-    <path d="M1160 360 Q 1150 280, 1120 200" fill="none" stroke="#9CD8D1" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Side branch -->
-    <path d="M1150 290 Q 1175 250, 1185 210" fill="none" stroke="#9CD8D1" stroke-width="1.5" stroke-linecap="round"/>
-    
-    <!-- Leaves on main stem (Left side) -->
-    <path d="M1153 330 Q 1135 325, 1135 335 Q 1145 345, 1153 330Z" />
-    <path d="M1143 280 Q 1120 275, 1120 285 Q 1135 295, 1143 280Z" />
-    <path d="M1132 235 Q 1110 230, 1110 240 Q 1120 250, 1132 235Z" />
-    
-    <!-- Leaves on main stem (Right side) -->
-    <path d="M1147 305 Q 1165 295, 1170 305 Q 1160 315, 1147 305Z" />
-    <path d="M1137 255 Q 1155 245, 1160 255 Q 1150 265, 1137 255Z" />
-    
-    <!-- Leaves on branch -->
-    <path d="M1165 260 Q 1185 250, 1190 260 Q 1180 270, 1165 260Z" />
-    <path d="M1178 225 Q 1195 215, 1198 225 Q 1188 235, 1178 225Z" />
-    
-    <!-- Top leaf -->
-    <path d="M1120 200 Q 1110 185, 1115 180 Q 1125 190, 1120 200Z" />
+  <g class="rise rise-4">
+    <rect x="70" y="680" width="1060" height="90" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <path d="M423 680V770M776 680V770" stroke="#24515A"/>
+    <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif">
+      <text x="246" y="716" fill="#F4BE65" font-size="12" font-weight="700" letter-spacing="2">01 · RESEARCH</text>
+      <text x="246" y="744" fill="#B8E3DD" font-size="13">Waste valorization · biofuel · LCA</text>
+      <text x="600" y="716" fill="#7BD8CD" font-size="12" font-weight="700" letter-spacing="2">02 · ENGINEERING</text>
+      <text x="600" y="744" fill="#B8E3DD" font-size="13">Data · automation · technical systems</text>
+      <text x="954" y="716" fill="#F4BE65" font-size="12" font-weight="700" letter-spacing="2">03 · EXPERIENCES</text>
+      <text x="954" y="744" fill="#B8E3DD" font-size="13">Interfaces · games · creative tools</text>
+    </g>
   </g>
 
-  <g fill="#F8D58B" class="motion-rise">
-    <circle cx="650" cy="86" r="4"/>
-    <circle cx="680" cy="118" r="3"/>
-    <circle cx="708" cy="76" r="2"/>
-    <circle cx="744" cy="144" r="4"/>
-    <circle cx="786" cy="92" r="2"/>
+  <path d="M70 820H1130" stroke="url(#accent)" stroke-opacity="0.45"/>
+
+  <!-- NORTH STAR -->
+  <g class="rise rise-2">
+    <text x="70" y="878" fill="#F4BE65" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="3">01 / THE NORTH STAR</text>
+    <text x="70" y="930" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Make the complicated useful.</text>
+    <text x="70" y="969" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="16">I work where environmental research, software design, and human curiosity meet.</text>
+    <text x="70" y="996" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="15">The goal is a clear next step: a better decision, a useful tool, or an invitation to explore.</text>
   </g>
 
-  <g fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" class="motion-rise-late">
-    <text x="70" y="92" font-size="18" letter-spacing="5" fill="#B8E3DD">SOHEIL AGHAYANI</text>
-    <text x="70" y="148" font-size="42" font-weight="700" letter-spacing="1">RESEARCH</text>
-    <text x="70" y="193" font-size="42" font-weight="700" letter-spacing="1">INTO SYSTEMS</text>
-    <text x="70" y="232" font-size="16" letter-spacing="2" fill="#F8D58B">ENVIRONMENT · SOFTWARE · HUMAN CURIOSITY</text>
+  <g class="rise rise-4">
+    <rect x="760" y="864" width="370" height="142" rx="18" fill="#071B22" stroke="#24515A"/>
+    <circle cx="796" cy="905" r="6" fill="#F4BE65" class="signal"/>
+    <circle cx="796" cy="940" r="6" fill="#7BD8CD" class="signal"/>
+    <circle cx="796" cy="975" r="6" fill="#F4BE65" class="signal"/>
+    <path d="M808 905H1088M808 940H1088M808 975H1088" stroke="#24515A" stroke-dasharray="4 8"/>
+    <text x="830" y="909" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="14">question</text>
+    <text x="830" y="944" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="14">evidence</text>
+    <text x="830" y="979" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="14">human outcome</text>
+    <text x="1088" y="909" text-anchor="end" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="12">01</text>
+    <text x="1088" y="944" text-anchor="end" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="12">02</text>
+    <text x="1088" y="979" text-anchor="end" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="12">03</text>
   </g>
 
-  <g transform="translate(862 246)" fill="none" stroke="#F5F1E9" stroke-width="2" opacity="0.78" class="motion-rise-late">
-    <rect width="248" height="62" rx="14"/>
-    <text x="124" y="35" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#B8E3DD" stroke="none" text-anchor="middle" dominant-baseline="middle">IDEAS → TOOLS</text>
+  <text x="70" y="1057" fill="#9DB6B6" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="4" class="fade">RESEARCH QUESTION  →  EVIDENCE  →  USEFUL SYSTEM  →  HUMAN OUTCOME</text>
+
+  <!-- FEATURED ORBIT -->
+  <g class="rise rise-2">
+    <text x="70" y="1134" fill="#F4BE65" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="3">02 / FEATURED ORBIT</text>
+    <text x="70" y="1176" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700">Projects with a point of view.</text>
   </g>
 
-  <!-- The introduction continues inside the same visual surface. -->
-  <path d="M0 360H1200V532Q1200 560 1172 560H28Q0 560 0 532Z" fill="#061B21"/>
-  <path d="M140 391H1060" stroke="#1B4650" stroke-width="1" opacity="0.9"/>
-  <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif" class="motion-rise-late">
-    <text x="600" y="437" font-size="38" font-weight="700" letter-spacing="1" fill="#F5F1E9">SOHEIL AGHAYANI</text>
-    <text x="600" y="477" font-size="16" font-weight="700" fill="#F5F1E9">Environmental Engineer · Sustainability Researcher · Software Builder</text>
-    <text x="600" y="512" font-size="16" fill="#B8E3DD">Research that becomes a system. Systems that feel human.</text>
+  <g class="rise rise-3">
+    <rect x="70" y="1210" width="510" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="610" y="1210" width="520" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="70" y="1375" width="510" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="610" y="1375" width="520" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="70" y="1540" width="510" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="610" y="1540" width="520" height="145" rx="18" fill="#0D3038" stroke="#24515A"/>
+
+    <g font-family="Arial, Helvetica, sans-serif">
+      <g class="link">
+        <a href="https://soheil-aghayani.github.io/" target="_blank">
+          <text x="98" y="1246" fill="#F5F1E9" font-size="19" font-weight="700">Portfolio OS</text>
+          <text x="98" y="1278" fill="#B8E3DD" font-size="14">A living portfolio for research, systems, and curiosity.</text>
+          <text x="98" y="1319" fill="#F4BE65" font-size="12" letter-spacing="1">HTML · CSS · JAVASCRIPT · CANVAS</text>
+        </a>
+      </g>
+      <g class="link">
+        <a href="https://soheil-aghayani.github.io/Gamify-Garden/" target="_blank">
+          <text x="638" y="1246" fill="#F5F1E9" font-size="19" font-weight="700">Apricity · Gamify Garden</text>
+          <text x="638" y="1278" fill="#B8E3DD" font-size="14">RTL daily gamification with visible, low-pressure progress.</text>
+          <text x="638" y="1319" fill="#7BD8CD" font-size="12" letter-spacing="1">REACT · TYPESCRIPT · PWA</text>
+        </a>
+      </g>
+      <g class="link">
+        <a href="https://soheil-aghayani.github.io/Design-Suite/" target="_blank">
+          <text x="98" y="1411" fill="#F5F1E9" font-size="19" font-weight="700">Design Suite</text>
+          <text x="98" y="1443" fill="#B8E3DD" font-size="14">A visual workshop for diagrams, gradients, and utilities.</text>
+          <text x="98" y="1484" fill="#F4BE65" font-size="12" letter-spacing="1">JAVASCRIPT · SVG · EXPORT WORKFLOWS</text>
+        </a>
+      </g>
+      <g class="link">
+        <a href="https://soheil-aghayani.github.io/Coffpen/" target="_blank">
+          <text x="638" y="1411" fill="#F5F1E9" font-size="19" font-weight="700">Coffpen</text>
+          <text x="638" y="1443" fill="#B8E3DD" font-size="14">Persian writing, short stories, and quiet reading.</text>
+          <text x="638" y="1484" fill="#7BD8CD" font-size="12" letter-spacing="1">STATIC PUBLISHING · PERSIAN TYPOGRAPHY</text>
+        </a>
+      </g>
+      <g class="link">
+        <a href="https://soheil-aghayani.github.io/pahlavan/" target="_blank">
+          <text x="98" y="1576" fill="#F5F1E9" font-size="19" font-weight="700">Pahlavan</text>
+          <text x="98" y="1608" fill="#B8E3DD" font-size="14">A 3D musical manuscript inspired by Persian epic storytelling.</text>
+          <text x="98" y="1649" fill="#F4BE65" font-size="12" letter-spacing="1">CSS 3D · WEB AUDIO · VISUAL STORYTELLING</text>
+        </a>
+      </g>
+      <g class="link">
+        <a href="https://github.com/Soheil-Aghayani/x-clone" target="_blank">
+          <text x="638" y="1576" fill="#F5F1E9" font-size="19" font-weight="700">X Clone</text>
+          <text x="638" y="1608" fill="#B8E3DD" font-size="14">A native social client with real authentication and persistence.</text>
+          <text x="638" y="1649" fill="#7BD8CD" font-size="12" letter-spacing="1">JAVA 21 · JAVAFX · SQLITE · TURSO</text>
+        </a>
+      </g>
+    </g>
+  </g>
+
+  <!-- CONSTELLATION -->
+  <g class="rise rise-2">
+    <text x="70" y="1762" fill="#F4BE65" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="3">03 / MORE SPARKS FROM THE CONSTELLATION</text>
+    <text x="70" y="1803" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Small tools, same compass.</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" class="rise rise-3">
+    <path d="M70 1834H1130" stroke="#24515A"/>
+    <path d="M600 1834V2020" stroke="#24515A"/>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/iriswa/" target="_blank">
+        <text x="70" y="1875" fill="#F5F1E9" font-size="16" font-weight="700">IRISWA</text>
+        <text x="70" y="1903" fill="#9DB6B6" font-size="13">Persian environmental publishing and knowledge.</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/ncbi/" target="_blank">
+        <text x="70" y="1950" fill="#F5F1E9" font-size="16" font-weight="700">NCBI Explainer</text>
+        <text x="70" y="1978" fill="#9DB6B6" font-size="13">A visual path from a question to a database.</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/Laboratory-Rules/" target="_blank">
+        <text x="630" y="1875" fill="#F5F1E9" font-size="16" font-weight="700">Laboratory Rules</text>
+        <text x="630" y="1903" fill="#9DB6B6" font-size="13">RTL safety, protocols, waste, and emergencies.</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://github.com/Soheil-Aghayani/dodge-game" target="_blank">
+        <text x="630" y="1950" fill="#F5F1E9" font-size="16" font-weight="700">Ashfall Embers Trial</text>
+        <text x="630" y="1978" fill="#9DB6B6" font-size="13">A PyQt5 survival arcade experiment.</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/food-recipe/" target="_blank">
+        <text x="70" y="2022" fill="#F5F1E9" font-size="16" font-weight="700">Food Recipe</text>
+        <text x="70" y="2050" fill="#9DB6B6" font-size="13">A playful browser desktop for recipes and tiny apps.</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/egg-timer/" target="_blank">
+        <text x="630" y="2022" fill="#F5F1E9" font-size="16" font-weight="700">Egg Timer</text>
+        <text x="630" y="2050" fill="#9DB6B6" font-size="13">A small, warm interface for choosing the egg you want.</text>
+      </a>
+    </g>
+  </g>
+
+  <!-- RESEARCH AND BUILD SIGNAL -->
+  <g class="rise rise-2">
+    <text x="70" y="2090" fill="#F4BE65" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="3">04 / THE SIGNAL</text>
+    <rect x="70" y="2120" width="510" height="150" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <rect x="610" y="2120" width="520" height="150" rx="18" fill="#0D3038" stroke="#24515A"/>
+    <text x="98" y="2158" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">RESEARCH</text>
+    <text x="98" y="2190" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="14">Solid waste · waste valorization · biofuel</text>
+    <text x="98" y="2217" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="14">Life cycle assessment · circular systems</text>
+    <text x="98" y="2244" fill="#F4BE65" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="1">SIMAPRO · OPENLCA · LANDGEM · GIS</text>
+    <text x="638" y="2158" fill="#F5F1E9" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">BUILD</text>
+    <text x="638" y="2190" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="14">Python · data processing · automation</text>
+    <text x="638" y="2217" fill="#B8E3DD" font-family="Arial, Helvetica, sans-serif" font-size="14">JavaScript · TypeScript · HTML · CSS · SVG</text>
+    <text x="638" y="2244" fill="#7BD8CD" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="1">C# · WPF · JAVA · JAVAFX · CANVAS</text>
+  </g>
+
+  <!-- FOOTER -->
+  <path d="M70 2300H1130" stroke="url(#accent)" stroke-opacity="0.55"/>
+  <g font-family="Arial, Helvetica, sans-serif" class="rise rise-4">
+    <text x="70" y="2330" fill="#9DB6B6" font-size="12" letter-spacing="2">RESEARCHER · ENGINEER · BUILDER</text>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/" target="_blank">
+        <text x="1130" y="2330" text-anchor="end" fill="#F5F1E9" font-size="13" font-weight="700">PORTFOLIO</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://soheil-aghayani.github.io/projects.html" target="_blank">
+        <text x="995" y="2330" text-anchor="end" fill="#F5F1E9" font-size="13" font-weight="700">PROJECTS</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="https://www.linkedin.com/in/agseyl/" target="_blank">
+        <text x="875" y="2330" text-anchor="end" fill="#F5F1E9" font-size="13" font-weight="700">LINKEDIN</text>
+      </a>
+    </g>
+    <g class="link">
+      <a href="mailto:soheyl.aghayani@gmail.com">
+        <text x="750" y="2330" text-anchor="end" fill="#F5F1E9" font-size="13" font-weight="700">EMAIL</text>
+      </a>
+    </g>
   </g>
 </svg>
