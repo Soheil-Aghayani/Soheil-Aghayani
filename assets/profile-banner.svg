@@ -1,6 +1,6 @@
 <svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Soheil Aghayani - research, systems, curiosity</title>
-  <desc id="desc">An abstract landscape that connects environmental research with software systems.</desc>
+  <desc id="desc">An abstract landscape that connects environmental research with software systems, featuring a sprouting plant on the lower right.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="360" gradientUnits="userSpaceOnUse">
       <stop stop-color="#092A31"/>
@@ -27,10 +27,6 @@
         from { transform: scale(0.88); }
         to { transform: scale(1); }
       }
-      @keyframes draw-line {
-        from { stroke-dasharray: 340; stroke-dashoffset: 340; }
-        to { stroke-dasharray: 340; stroke-dashoffset: 0; }
-      }
       @keyframes orbit-forward {
         from { transform: rotate(0deg); }
         to { transform: rotate(360deg); }
@@ -50,9 +46,6 @@
         transform-origin: center;
         animation: scale-in 1050ms cubic-bezier(0.16, 1, 0.3, 1) both;
       }
-      .motion-trace {
-        animation: draw-line 1450ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
-      }
       .orbit-motion,
       .orbit-motion-reverse {
         transform-box: view-box;
@@ -68,7 +61,6 @@
         .motion-rise,
         .motion-rise-late,
         .motion-scale,
-        .motion-trace,
         .orbit-motion,
         .orbit-motion-reverse {
           animation: none !important;
@@ -105,13 +97,29 @@
   <path d="M0 260C124 210 202 224 318 262C430 298 522 216 643 242C772 269 842 222 950 244C1047 264 1108 220 1200 204V360H0V260Z" fill="url(#ridge)" class="motion-rise"/>
   <path d="M0 298C124 267 230 279 337 311C461 348 545 273 655 292C785 315 862 276 972 291C1070 305 1128 279 1200 267V360H0V298Z" fill="#061B21" opacity="0.8" class="motion-rise-late"/>
 
-  <g stroke="#9CD8D1" stroke-width="3" stroke-linecap="round" opacity="0.85" class="motion-rise-late">
-    <path d="M90 292C102 262 115 243 138 219"/>
-    <path d="M110 267C94 258 86 246 82 231"/>
-    <path d="M118 254C139 248 151 237 158 221"/>
-    <path d="M132 235C123 219 123 206 128 193"/>
+  <!-- Plant sprouting from the bottom right ground -->
+  <g opacity="0.85" class="motion-rise-late" fill="#9CD8D1">
+    <!-- Main stem -->
+    <path d="M1160 360 Q 1150 280, 1120 200" fill="none" stroke="#9CD8D1" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Side branch -->
+    <path d="M1150 290 Q 1175 250, 1185 210" fill="none" stroke="#9CD8D1" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- Leaves on main stem (Left side) -->
+    <path d="M1153 330 Q 1135 325, 1135 335 Q 1145 345, 1153 330Z" />
+    <path d="M1143 280 Q 1120 275, 1120 285 Q 1135 295, 1143 280Z" />
+    <path d="M1132 235 Q 1110 230, 1110 240 Q 1120 250, 1132 235Z" />
+    
+    <!-- Leaves on main stem (Right side) -->
+    <path d="M1147 305 Q 1165 295, 1170 305 Q 1160 315, 1147 305Z" />
+    <path d="M1137 255 Q 1155 245, 1160 255 Q 1150 265, 1137 255Z" />
+    
+    <!-- Leaves on branch -->
+    <path d="M1165 260 Q 1185 250, 1190 260 Q 1180 270, 1165 260Z" />
+    <path d="M1178 225 Q 1195 215, 1198 225 Q 1188 235, 1178 225Z" />
+    
+    <!-- Top leaf -->
+    <path d="M1120 200 Q 1110 185, 1115 180 Q 1125 190, 1120 200Z" />
   </g>
-  <path d="M137 219C109 211 94 195 93 173C118 178 137 192 145 211C151 193 164 182 183 177C181 199 165 216 145 224Z" fill="#9CD8D1" opacity="0.82" class="motion-rise-late"/>
 
   <g fill="#F8D58B" class="motion-rise">
     <circle cx="650" cy="86" r="4"/>
@@ -130,9 +138,6 @@
 
   <g transform="translate(862 246)" fill="none" stroke="#F5F1E9" stroke-width="2" opacity="0.78" class="motion-rise-late">
     <rect width="248" height="62" rx="14"/>
-    <path d="M25 39C54 22 75 29 97 21C122 12 146 20 169 11C190 3 211 12 225 7" stroke="#F8D58B" class="motion-trace"/>
-    <circle cx="25" cy="39" r="4" fill="#F8D58B" stroke="none"/>
-    <circle cx="225" cy="7" r="4" fill="#9CD8D1" stroke="none"/>
-    <text x="25" y="52" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="2" fill="#B8E3DD" stroke="none">IDEAS → TOOLS</text>
+    <text x="124" y="35" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#B8E3DD" stroke="none" text-anchor="middle" dominant-baseline="middle">IDEAS → TOOLS</text>
   </g>
 </svg>
