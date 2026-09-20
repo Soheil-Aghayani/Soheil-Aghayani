@@ -31,6 +31,14 @@
         from { stroke-dasharray: 340; stroke-dashoffset: 340; }
         to { stroke-dasharray: 340; stroke-dashoffset: 0; }
       }
+      @keyframes orbit-forward {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes orbit-reverse {
+        from { transform: rotate(360deg); }
+        to { transform: rotate(0deg); }
+      }
       .motion-rise {
         animation: rise-in 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
       }
@@ -45,11 +53,24 @@
       .motion-trace {
         animation: draw-line 1450ms cubic-bezier(0.16, 1, 0.3, 1) 420ms both;
       }
+      .orbit-motion,
+      .orbit-motion-reverse {
+        transform-box: view-box;
+        transform-origin: 1020px 112px;
+      }
+      .orbit-motion {
+        animation: orbit-forward 18s linear infinite;
+      }
+      .orbit-motion-reverse {
+        animation: orbit-reverse 27s linear infinite;
+      }
       @media (prefers-reduced-motion: reduce) {
         .motion-rise,
         .motion-rise-late,
         .motion-scale,
-        .motion-trace {
+        .motion-trace,
+        .orbit-motion,
+        .orbit-motion-reverse {
           animation: none !important;
         }
       }
@@ -58,7 +79,17 @@
 
   <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
   <circle cx="1020" cy="112" r="112" fill="#F8D58B" opacity="0.18" filter="url(#glow)" class="motion-scale"/>
+  <g fill="none" stroke-width="1.5" class="motion-rise">
+    <circle cx="1020" cy="112" r="138" stroke="#F8D58B" opacity="0.28"/>
+    <circle cx="1020" cy="112" r="176" stroke="#B8E3DD" opacity="0.2"/>
+  </g>
   <circle cx="1020" cy="112" r="76" fill="url(#sun)" opacity="0.92" class="motion-scale"/>
+  <g class="orbit-motion">
+    <circle cx="1158" cy="112" r="5" fill="#9CD8D1"/>
+  </g>
+  <g class="orbit-motion-reverse">
+    <circle cx="1196" cy="112" r="4" fill="#F8D58B"/>
+  </g>
 
   <g opacity="0.22" stroke="#C4EEF0" stroke-width="1" class="motion-rise">
     <path d="M48 68H530"/>
