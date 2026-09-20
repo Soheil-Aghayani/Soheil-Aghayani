@@ -1,26 +1,14 @@
-<table align="center" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#061B21">
-  <tr>
-    <td align="center" bgcolor="#061B21">
-      <img src="./assets/profile-banner.svg" alt="Soheil Aghayani. Research into systems, environmental engineering, software, and human curiosity." width="100%">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" bgcolor="#061B21">
-      <h1><font color="#F5F1E9">SOHEIL AGHAYANI</font></h1>
+<div align="center">
+  <img src="./assets/profile-banner.svg" alt="Soheil Aghayani. Research into systems, environmental engineering, software, and human curiosity." width="100%">
 
-      <p><strong><font color="#F5F1E9">Environmental Engineer · Sustainability Researcher · Software Builder</font></strong></p>
-      <p><font color="#B8E3DD">Research that becomes a system. Systems that feel human.</font></p>
-
-      <p>
-        <a href="https://soheil-aghayani.github.io/"><font color="#F8D58B"><strong>ENTER THE PORTFOLIO</strong></font></a>
-        &nbsp; · &nbsp;
-        <a href="https://soheil-aghayani.github.io/projects.html"><font color="#F8D58B"><strong>EXPLORE THE LAB</strong></font></a>
-        &nbsp; · &nbsp;
-        <a href="https://www.linkedin.com/in/agseyl/"><font color="#F8D58B"><strong>CONNECT</strong></font></a>
-      </p>
-    </td>
-  </tr>
-</table>
+  <p>
+    <a href="https://soheil-aghayani.github.io/"><strong>ENTER THE PORTFOLIO</strong></a>
+    &nbsp; · &nbsp;
+    <a href="https://soheil-aghayani.github.io/projects.html"><strong>EXPLORE THE LAB</strong></a>
+    &nbsp; · &nbsp;
+    <a href="https://www.linkedin.com/in/agseyl/"><strong>CONNECT</strong></a>
+  </p>
+</div>
 
 <br>
 

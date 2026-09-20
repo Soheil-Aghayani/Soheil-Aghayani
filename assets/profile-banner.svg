@@ -1,4 +1,4 @@
-<svg width="1200" height="360" viewBox="0 0 1200 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<svg width="1200" height="560" viewBox="0 0 1200 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">Soheil Aghayani - research, systems, curiosity</title>
   <desc id="desc">An abstract landscape that connects environmental research with software systems, featuring a sprouting plant on the lower right.</desc>
   <defs>
@@ -69,7 +69,7 @@
     </style>
   </defs>
 
-  <rect width="1200" height="360" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="560" rx="28" fill="url(#bg)"/>
   <circle cx="1020" cy="112" r="112" fill="#F8D58B" opacity="0.18" filter="url(#glow)" class="motion-scale"/>
   <g fill="none" stroke-width="1.5" class="motion-rise">
     <circle cx="1020" cy="112" r="138" stroke="#F8D58B" opacity="0.28"/>
@@ -139,5 +139,14 @@
   <g transform="translate(862 246)" fill="none" stroke="#F5F1E9" stroke-width="2" opacity="0.78" class="motion-rise-late">
     <rect width="248" height="62" rx="14"/>
     <text x="124" y="35" font-family="Arial, Helvetica, sans-serif" font-size="12" letter-spacing="2" fill="#B8E3DD" stroke="none" text-anchor="middle" dominant-baseline="middle">IDEAS → TOOLS</text>
+  </g>
+
+  <!-- The introduction continues inside the same visual surface. -->
+  <path d="M0 360H1200V532Q1200 560 1172 560H28Q0 560 0 532Z" fill="#061B21"/>
+  <path d="M140 391H1060" stroke="#1B4650" stroke-width="1" opacity="0.9"/>
+  <g text-anchor="middle" font-family="Arial, Helvetica, sans-serif" class="motion-rise-late">
+    <text x="600" y="437" font-size="38" font-weight="700" letter-spacing="1" fill="#F5F1E9">SOHEIL AGHAYANI</text>
+    <text x="600" y="477" font-size="16" font-weight="700" fill="#F5F1E9">Environmental Engineer · Sustainability Researcher · Software Builder</text>
+    <text x="600" y="512" font-size="16" fill="#B8E3DD">Research that becomes a system. Systems that feel human.</text>
   </g>
 </svg>
